@@ -11,7 +11,7 @@ package medewerkers;
  */
 public class zoek_luggage {
     
-    private String RegistrationNr;
+    private String Luggage_id;
     private String DateFound;
     private String TimeFound;
     private String LuggageType;
@@ -19,8 +19,8 @@ public class zoek_luggage {
     private String Firstname;
     private String Status;
 
-    public zoek_luggage(String RegistrationNr, String DateFound, String TimeFound, String LuggageType, String Brand, String Firstname, String Status) {
-        this.RegistrationNr = RegistrationNr;
+    public zoek_luggage(String Luggage_id, String DateFound, String TimeFound, String LuggageType, String Brand, String Firstname, String Status) {
+        this.Luggage_id = Luggage_id;
         this.DateFound = DateFound;
         this.TimeFound = TimeFound;
         this.LuggageType = LuggageType;
@@ -29,8 +29,8 @@ public class zoek_luggage {
         this.Status = Status;
     }
 
-    public String getRegistrationNr() {
-        return RegistrationNr;
+    public String getLuggage_id() {
+        return Luggage_id;
     }
 
     public String getDateFound() {
@@ -57,8 +57,8 @@ public class zoek_luggage {
         return Status;
     }
 
-    public void setRegistrationNr(String RegistrationNr) {
-        this.RegistrationNr = RegistrationNr;
+    public void setLuggage_id(String Luggage_id) {
+        this.Luggage_id = Luggage_id;
     }
 
     public void setDateFound(String DateFound) {

@@ -127,6 +127,7 @@ public class ZoekenController implements Initializable {
                 brand.setCellValueFactory(new PropertyValueFactory("Brand"));
                 Firstname.setCellValueFactory(new PropertyValueFactory("Firstname"));
                 status.setCellValueFactory(new PropertyValueFactory("Status"));
+                
             }
             
         }catch(SQLException e){
@@ -152,9 +153,17 @@ public class ZoekenController implements Initializable {
 
                 if (luggage.getBrand().toLowerCase().contains(lowerCaseFilter)) {
                     return true; // Filter matches first name.
-                } else if (luggage.getLuggageType().toLowerCase().contains(lowerCaseFilter)) {
+                } else if (luggage.getLuggage_id().toLowerCase().contains(lowerCaseFilter)) {
                     return true; // Filter matches last name.
-                }else if (luggage.getRegistrationNr().toLowerCase().contains(lowerCaseFilter)) {
+                }else if (luggage.getDateFound().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Filter matches last name.
+                }else if (luggage.getTimeFound().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Filter matches last name.
+                }else if (luggage.getLuggageType().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Filter matches last name.
+                }else if (luggage.getBrand().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Filter matches last name.
+                }else if (luggage.getFirstname().toLowerCase().contains(lowerCaseFilter)) {
                     return true; // Filter matches last name.
                 }else if (luggage.getStatus().toLowerCase().contains(lowerCaseFilter)) {
                     return true; // Filter matches last name.
