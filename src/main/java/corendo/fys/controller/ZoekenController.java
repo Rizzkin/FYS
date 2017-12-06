@@ -60,7 +60,7 @@ public class ZoekenController implements Initializable {
     private TableColumn brand;
 
     @FXML
-    private TableColumn passenger;
+    private TableColumn Firstname;
 
     @FXML
     private TableColumn status;
@@ -125,7 +125,7 @@ public class ZoekenController implements Initializable {
                 timeFound.setCellValueFactory(new PropertyValueFactory("TimeFound"));
                 luggageType.setCellValueFactory(new PropertyValueFactory("LuggageType"));
                 brand.setCellValueFactory(new PropertyValueFactory("Brand"));
-                passenger.setCellValueFactory(new PropertyValueFactory("Firstname"));
+                Firstname.setCellValueFactory(new PropertyValueFactory("Firstname"));
                 status.setCellValueFactory(new PropertyValueFactory("Status"));
             }
             

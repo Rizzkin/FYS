@@ -33,7 +33,7 @@
                         <TableColumn fx:id="timeFound" prefWidth="125.0" text="Time Found" />
                         <TableColumn fx:id="luggageType" prefWidth="120.0" text="Luggage Type" />
                         <TableColumn fx:id="brand" prefWidth="120.0" text="Brand" />
-                        <TableColumn fx:id="passenger" prefWidth="203.0" text="Passenger" />
+                        <TableColumn fx:id="Firstname" prefWidth="203.0" text="Passenger" />
                         <TableColumn fx:id="status" prefWidth="103.0" text="Status" />
                     </columns>
                   </TableView>

@@ -12,20 +12,20 @@ package medewerkers;
 public class zoek_luggage {
     
     private String RegistrationNr;
-    private String DataFound;
+    private String DateFound;
     private String TimeFound;
     private String LuggageType;
     private String Brand;
-    private String Passenger;
+    private String Firstname;
     private String Status;
 
-    public zoek_luggage(String RegistrationNr, String DataFound, String TimeFound, String LuggageType, String Brand, String Passenger, String Status) {
+    public zoek_luggage(String RegistrationNr, String DateFound, String TimeFound, String LuggageType, String Brand, String Firstname, String Status) {
         this.RegistrationNr = RegistrationNr;
-        this.DataFound = DataFound;
+        this.DateFound = DateFound;
         this.TimeFound = TimeFound;
         this.LuggageType = LuggageType;
         this.Brand = Brand;
-        this.Passenger = Passenger;
+        this.Firstname = Firstname;
         this.Status = Status;
     }
 
@@ -33,8 +33,8 @@ public class zoek_luggage {
         return RegistrationNr;
     }
 
-    public String getDataFound() {
-        return DataFound;
+    public String getDateFound() {
+        return DateFound;
     }
 
     public String getTimeFound() {
@@ -49,8 +49,8 @@ public class zoek_luggage {
         return Brand;
     }
 
-    public String getPassenger() {
-        return Passenger;
+    public String getFirstname() {
+        return Firstname;
     }
 
     public String getStatus() {
@@ -61,8 +61,8 @@ public class zoek_luggage {
         this.RegistrationNr = RegistrationNr;
     }
 
-    public void setDataFound(String DataFound) {
-        this.DataFound = DataFound;
+    public void setDateFound(String DateFound) {
+        this.DateFound = DateFound;
     }
 
     public void setTimeFound(String TimeFound) {
@@ -77,8 +77,8 @@ public class zoek_luggage {
         this.Brand = Brand;
     }
 
-    public void setPassenger(String Passenger) {
-        this.Passenger = Passenger;
+    public void setFirstname(String Firstname) {
+        this.Firstname = Firstname;
     }
 
     public void setStatus(String Status) {
