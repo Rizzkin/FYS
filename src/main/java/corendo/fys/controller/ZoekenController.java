@@ -43,25 +43,25 @@ public class ZoekenController implements Initializable {
     private TableView<zoek_luggage> tblLuggage;
 
     @FXML
-    private TableColumn<?, ?> regisNr;
+    private TableColumn regisNr;
 
     @FXML
-    private TableColumn<?, ?> dateFound;
+    private TableColumn dateFound;
 
     @FXML
-    private TableColumn<?, ?> timeFound;
+    private TableColumn timeFound;
 
     @FXML
-    private TableColumn<?, ?> luggageType;
+    private TableColumn luggageType;
 
     @FXML
-    private TableColumn<?, ?> brand;
+    private TableColumn brand;
 
     @FXML
-    private TableColumn<?, ?> passenger;
+    private TableColumn passenger;
 
     @FXML
-    private TableColumn<?, ?> status;
+    private TableColumn status;
     
     
     final ObservableList<zoek_luggage> data = FXCollections.observableArrayList();

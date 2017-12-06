@@ -190,8 +190,8 @@ public class Verloren_bagageController implements Initializable {
             String query_luggage = "INSERT INTO luggage (DateFound,TimeFound,"
                     + "LuggageType_id,Brand_id,MainColor_id,Status_id,Size_id,"
                     + "Weight_id,SecondColor_id,LuggageTag,Image,Location_Airport_id,"
-                    + "Airport_id,Passenger_id) "
-                    + "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                    + "Airport_id,Passenger_id,Flight,Features) "
+                    + "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             
             stmt = conn.prepareStatement(query_passenger,Statement.RETURN_GENERATED_KEYS);
             PreparedStatement stmt2 = conn.prepareStatement(query_luggage);
@@ -231,6 +231,8 @@ public class Verloren_bagageController implements Initializable {
             stmt2.setString(12, get_LocationAirport_id());
             stmt2.setString(13, get_Airport_id());
             stmt2.setLong(14, passengerId);
+            stmt2.setString(15, txtArrivedFlight.getText());
+            stmt2.setString(16, txt_area_bijzonder_merken.getText());
             
             
             stmt2.executeUpdate();
