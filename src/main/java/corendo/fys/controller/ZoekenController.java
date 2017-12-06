@@ -5,6 +5,7 @@ package corendo.fys.controller;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import corendo.fys.jdbcDBconnection;
 import java.net.URL;
@@ -22,6 +23,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import medewerkers.zoek_luggage;
 
 /**
@@ -63,8 +65,40 @@ public class ZoekenController implements Initializable {
     @FXML
     private TableColumn status;
     
+    @FXML
+    private JFXComboBox<?> ddlStatus;
+    
+    @FXML
+    private JFXTextField txtZoeken;
+    
     
     final ObservableList<zoek_luggage> data = FXCollections.observableArrayList();
+    FilteredList<zoek_luggage> filteredData = new FilteredList<>(data);
+    
+    
+    
+    @FXML
+    void on_zoek_status(KeyEvent event) {
+        
+    }
+    
+    private void populate_comboBox_Status() {
+        try {
+            String sql = "select * from status";
+            stmt = conn.prepareStatement(sql);
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                String l_list = rs.getString("Status");
+                
+            }
+            stmt.close();
+            rs.close();
+
+        } catch (SQLException ex) {
+            ex.getMessage();
+        }
+    }
     
     
     
@@ -104,5 +138,33 @@ public class ZoekenController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         FillTable();
+        
+        FilteredList<zoek_luggage> filteredData = new FilteredList<>(data, p -> true);
+        txtZoeken.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(luggage -> {
+                // If filter text is empty, display all persons.
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+
+                // Compare first name and last name of every person with filter text.
+                String lowerCaseFilter = newValue.toLowerCase();
+
+                if (luggage.getBrand().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Filter matches first name.
+                } else if (luggage.getLuggageType().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Filter matches last name.
+                }else if (luggage.getRegistrationNr().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Filter matches last name.
+                }else if (luggage.getStatus().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Filter matches last name.
+                }
+                return false; // Does not match.
+            });
+        });
+        
+        SortedList<zoek_luggage> sortedData = new SortedList<>(filteredData);
+        sortedData.comparatorProperty().bind(tblLuggage.comparatorProperty());
+        tblLuggage.setItems(sortedData);
     }
 }

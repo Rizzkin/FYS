@@ -14,12 +14,12 @@
          <left>
             <AnchorPane prefHeight="700.0" prefWidth="289.0" style="-fx-background-color: #aac4ed;" BorderPane.alignment="CENTER">
                <children>
-                  <JFXTextField layoutX="16.0" layoutY="99.0" maxWidth="258.0" minWidth="258.0" prefHeight="31.0" prefWidth="258.0" promptText="Zoeken" unFocusColor="BLACK">
+                  <JFXTextField fx:id="txtZoeken" layoutX="16.0" layoutY="99.0" maxWidth="258.0" minWidth="258.0" prefHeight="31.0" prefWidth="258.0" promptText="Zoeken" unFocusColor="BLACK">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </JFXTextField>
-                  <JFXComboBox layoutX="16.0" layoutY="30.0" prefHeight="36.0" prefWidth="243.0" promptText="Status" />
+                  <JFXComboBox fx:id="ddlStatus" layoutX="16.0" layoutY="30.0" onKeyReleased="#on_zoek_status" prefHeight="36.0" prefWidth="243.0" promptText="Status" />
                </children>
             </AnchorPane>
          </left>
