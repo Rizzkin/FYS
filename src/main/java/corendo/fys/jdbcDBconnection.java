@@ -20,7 +20,6 @@ public class jdbcDBconnection {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/demodb", "root", "admin");
-            // hello
             return conn;
         } catch (Exception e) {
             return null;
