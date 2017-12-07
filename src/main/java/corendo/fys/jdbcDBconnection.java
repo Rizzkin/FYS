@@ -19,7 +19,7 @@ public class jdbcDBconnection {
     public static Connection ConnectDB() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/demodb", "root", "ajaxisgoed");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/demodb", "root", "admin");
             return conn;
         } catch (Exception e) {
             return null;
