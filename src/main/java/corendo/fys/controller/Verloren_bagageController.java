@@ -344,7 +344,7 @@ public class Verloren_bagageController implements Initializable {
      */
     private void populate_comboBox_Status() {
         try {
-            String sql = "select * from status";
+            String sql = "select * from status where Status='Lost' ";
             stmt = conn.prepareStatement(sql);
             rs = stmt.executeQuery();
 

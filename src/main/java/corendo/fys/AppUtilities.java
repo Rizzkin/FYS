@@ -22,5 +22,6 @@ public class AppUtilities {
         
         return FXMLLoader.load(url);
     }
+
     
 }

@@ -5,6 +5,8 @@
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.StackPane?>
@@ -14,9 +16,9 @@
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
-            <AnchorPane minWidth="320.0" onMouseClicked="#dashbord_medewerker" prefHeight="700.0" prefWidth="144.0" style="-fx-background-color: #235061;" BorderPane.alignment="CENTER">
+            <AnchorPane minWidth="238.0" onMouseClicked="#dashbord_medewerker" prefHeight="720.0" prefWidth="238.0" style="-fx-background-color: #235061;" BorderPane.alignment="CENTER">
                <children>
-                  <JFXButton alignment="TOP_LEFT" layoutX="116.0" layoutY="146.0" prefHeight="32.0" prefWidth="167.0" text="Uitgebreid zoeken" textFill="WHITE">
+                  <JFXButton alignment="TOP_LEFT" layoutX="36.0" layoutY="167.0" onAction="#on_Zoeken" prefHeight="32.0" prefWidth="167.0" text="Zoeken" textFill="WHITE">
                      <graphic>
                         <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" />
                      </graphic>
@@ -24,7 +26,7 @@
                         <Font size="14.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton alignment="TOP_LEFT" layoutX="116.0" layoutY="258.0" onAction="#on_verloren_bagage" prefHeight="32.0" prefWidth="167.0" text="Verloren bagage" textFill="WHITE">
+                  <JFXButton alignment="TOP_LEFT" layoutX="36.0" layoutY="258.0" onAction="#on_verloren_bagage" prefHeight="32.0" prefWidth="167.0" text="Verloren bagage" textFill="WHITE">
                      <graphic>
                         <FontAwesomeIconView fill="WHITE" glyphName="" />
                      </graphic>
@@ -32,12 +34,12 @@
                         <Font size="14.0" />
                      </font>
                   </JFXButton>
-                  <Label layoutX="116.0" layoutY="223.0" text="Registratie" textFill="WHITE">
+                  <Label layoutX="36.0" layoutY="223.0" text="Registratie" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <JFXButton alignment="TOP_LEFT" layoutX="116.0" layoutY="290.0" prefHeight="32.0" prefWidth="167.0" text="Schadeclaims" textFill="WHITE">
+                  <JFXButton alignment="TOP_LEFT" layoutX="36.0" layoutY="290.0" prefHeight="32.0" prefWidth="167.0" text="Schadeclaims" textFill="WHITE">
                      <graphic>
                         <FontAwesomeIconView fill="WHITE" glyphName="SUITCASE" />
                      </graphic>
@@ -45,7 +47,7 @@
                         <Font size="14.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton alignment="TOP_LEFT" layoutX="116.0" layoutY="322.0" onAction="#on_Gevonden_bagage" prefHeight="32.0" prefWidth="167.0" text="Gevonden bagage" textFill="WHITE">
+                  <JFXButton alignment="TOP_LEFT" layoutX="36.0" layoutY="322.0" onAction="#on_Gevonden_bagage" prefHeight="32.0" prefWidth="167.0" text="Gevonden bagage" textFill="WHITE">
                      <graphic>
                         <FontAwesomeIconView fill="WHITE" glyphName="PENCIL_SQUARE_ALT" />
                      </graphic>
@@ -53,7 +55,7 @@
                         <Font size="14.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton alignment="TOP_LEFT" layoutX="116.0" layoutY="354.0" prefHeight="32.0" prefWidth="167.0" text="Registraties inlezen" textFill="WHITE">
+                  <JFXButton alignment="TOP_LEFT" layoutX="36.0" layoutY="354.0" prefHeight="32.0" prefWidth="167.0" text="Registraties inlezen" textFill="WHITE">
                      <graphic>
                         <FontAwesomeIconView fill="WHITE" glyphName="EXTERNAL_LINK" />
                      </graphic>
@@ -61,7 +63,7 @@
                         <Font size="14.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton alignment="TOP_LEFT" layoutX="116.0" layoutY="473.0" prefHeight="32.0" prefWidth="167.0" text="Instellingen" textFill="WHITE">
+                  <JFXButton alignment="TOP_LEFT" layoutX="36.0" layoutY="473.0" prefHeight="32.0" prefWidth="167.0" text="Instellingen" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -69,23 +71,11 @@
                         <MaterialDesignIconView fill="WHITE" glyphName="WRENCH" />
                      </graphic>
                   </JFXButton>
-                  <Label layoutX="116.0" layoutY="438.0" text="Instellingen" textFill="WHITE">
+                  <Label layoutX="36.0" layoutY="438.0" text="Instellingen" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <AnchorPane prefHeight="700.0" prefWidth="95.0">
-                     <children>
-                        <JFXButton buttonType="RAISED" contentDisplay="TOP" layoutX="15.0" layoutY="49.0" onAction="#on_Zoeken" prefHeight="66.0" prefWidth="66.0" ripplerFill="WHITE" style="-fx-background-color: #1c3944;" text="Zoeken" textFill="WHITE">
-                           <graphic>
-                              <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="20" />
-                           </graphic>
-                           <font>
-                              <Font size="10.0" />
-                           </font>
-                        </JFXButton>
-                     </children>
-                  </AnchorPane>
                   <AnchorPane fx:id="show_me_user_info" layoutX="23.0" layoutY="411.0" prefHeight="237.0" prefWidth="275.0" style="-fx-background-color: #FFF; -fx-background-radius: 0.5em;" visible="false" AnchorPane.bottomAnchor="70.0">
                      <children>
                         <FontAwesomeIconView fill="#235061" glyphName="DESKTOP" layoutX="14.0" layoutY="37.0" size="20" text="" />
@@ -115,7 +105,7 @@
                         <Hyperlink layoutX="59.0" layoutY="203.0" text="Log out" />
                      </children>
                   </AnchorPane>
-                  <JFXButton fx:id="meOption" alignment="CENTER" buttonType="RAISED" contentDisplay="TOP" onAction="#on_Me_User" prefHeight="66.0" prefWidth="316.0" style="-fx-background-color: #1c3944;" text="Me" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
+                  <JFXButton fx:id="meOption" alignment="CENTER" buttonType="RAISED" contentDisplay="TOP" onAction="#on_Me_User" prefHeight="66.0" prefWidth="235.0" style="-fx-background-color: #1c3944;" text="Me" textFill="WHITE" AnchorPane.bottomAnchor="0.0">
                      <font>
                         <Font size="10.0" />
                      </font>
@@ -123,6 +113,16 @@
                         <MaterialDesignIconView fill="WHITE" glyphName="MENU" size="20" />
                      </graphic>
                   </JFXButton>
+                  <Label layoutX="37.0" layoutY="147.0" text="Zoeken" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="130.0" fitWidth="183.0" layoutX="24.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/corendon.jpg" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
          </left>
