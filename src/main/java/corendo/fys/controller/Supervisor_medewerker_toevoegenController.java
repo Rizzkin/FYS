@@ -4,7 +4,12 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import corendo.fys.jdbcDBconnection;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.security.DigestInputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -27,6 +32,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import supervisor.Employee;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
 
 /**
  * FXML Controller class
@@ -363,17 +371,37 @@ public class Supervisor_medewerker_toevoegenController implements Initializable 
      * @return het random wachtwoord
      */
     protected String randomPassword() {
-        String passwordCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+        String passwordCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()";
         StringBuilder passwordBuilder = new StringBuilder();
         Random randomizer = new Random();
-        while (passwordBuilder.length() < 8) {
+        while (passwordBuilder.length() < 10) {
             int index = (int) (randomizer.nextFloat() * passwordCharacters.length());
             passwordBuilder.append(passwordCharacters.charAt(index));
         }
         String generatedPassword = passwordBuilder.toString();
+        
+        byte[] hash = stringToMD5(generatedPassword);
 
         return generatedPassword;
 
+    }
+
+   public byte[] stringToMD5(String value) {
+        byte[] hash = null;
+        try {
+            MessageDigest md5 = MessageDigest.getInstance("MD5");
+            InputStream stream = new ByteArrayInputStream(value.getBytes(StandardCharsets.UTF_8));
+            DigestInputStream inputStream = new DigestInputStream(stream, md5);
+            while (inputStream.read() != -1);
+            hash = md5.digest();
+        } catch (NoSuchAlgorithmException | IOException e) {
+            e.printStackTrace();
+            System.exit(-1);
+        }
+        
+        System.out.println(Arrays.toString(hash));
+        
+        return hash;
     }
 
     @Override
